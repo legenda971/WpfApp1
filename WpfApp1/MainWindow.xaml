@@ -17,12 +17,11 @@
         WindowStartupLocation="CenterScreen">
     <materialDesign:Card HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid Margin="16">
-            <Button
-                Style="{StaticResource MaterialDesignFlatButton}"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top">
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="HamburgerMenu"></materialDesign:PackIcon>
             </Button>
-            <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
         </Grid>
     </materialDesign:Card>
 </Window>
