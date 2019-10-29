@@ -17,6 +17,11 @@
         WindowStartupLocation="CenterScreen">
     <materialDesign:Card HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid Margin="16">
+            <Button
+                Style="{StaticResource MaterialDesignFlatButton}"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+            </Button>
             <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">My First Material Design App</TextBlock>
         </Grid>
     </materialDesign:Card>
