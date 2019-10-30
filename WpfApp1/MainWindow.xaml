@@ -23,17 +23,18 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid Margin="20">
-        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Width="328" Height="76">
             <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
             </WrapPanel>
             <WrapPanel >
                 <CheckBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="CheckBoxGDPR"/>
-                <Label>More about GDPR visit on this website</Label>
+                <Label>Súhlasim so spracovaním osobných údajov podľa</Label>
                 <TextBlock VerticalAlignment="Center">           
-                    <Hyperlink NavigateUri="https://eugdpr.org" RequestNavigate="Hyperlink_RequestNavigate" > HERE </Hyperlink>
+                    <Hyperlink NavigateUri="https://www.henkel.sk/spolocnost/riadenie-a-sulad-s-legislativou/spracuvanie-osobnych-udajov?fbclid=IwAR1alwPhX5n7AyrSo39nhJ87hhJNICfbTgJOgKmGAcMsP-91Q4Y2Cx2eHlg" RequestNavigate="Hyperlink_RequestNavigate" > pravidiel GDPR </Hyperlink>
                 </TextBlock>
             </WrapPanel>
+
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20">
             <ListBox Name="pdfList" Height="auto" Width="auto" SelectionChanged="pdfList_Change">
@@ -51,9 +52,9 @@
             <Button Name="otvoritPDF" Click="otvoritPDF_Click" Margin="10" VerticalAlignment="Center">Otvorit PDF</Button>
         </WrapPanel>
 
-        <WrapPanel HorizontalAlignment="Left" Width="215" Orientation="Vertical">
-            <TextBlock Name="textBlockNameRole" Margin="0, 10, 50, 10" FontFamily="Arial Black" FontSize="20"/>
-            <TextBlock Margin="0,0,10,0" Name="textBlockRoleKappa" Height="auto" IsEnabled="False" TextWrapping="Wrap" />
+        <WrapPanel HorizontalAlignment="Left" Width="211" Orientation="Vertical">
+            <TextBlock Name="textBlockNameRole" FontFamily="Arial Black" FontSize="20" Width="211" TextWrapping="Wrap"/>
+            <TextBlock Name="textBlockRoleKappa" Height="auto" IsEnabled="False" TextWrapping="Wrap" Width="200" />
         </WrapPanel>
     </Grid>
 </Window>
