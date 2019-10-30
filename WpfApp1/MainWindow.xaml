@@ -22,8 +22,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Margin="20">
-        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Width="328" Height="76">
+    <Grid Margin="20" >
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical" Width="328" Height="76" >
             <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
             </WrapPanel>
@@ -31,7 +31,7 @@
                 <CheckBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="CheckBoxGDPR"/>
                 <Label>Súhlasim so spracovaním osobných údajov podľa</Label>
                 <TextBlock VerticalAlignment="Center">           
-                    <Hyperlink NavigateUri="https://www.henkel.sk/spolocnost/riadenie-a-sulad-s-legislativou/spracuvanie-osobnych-udajov?fbclid=IwAR1alwPhX5n7AyrSo39nhJ87hhJNICfbTgJOgKmGAcMsP-91Q4Y2Cx2eHlg" RequestNavigate="Hyperlink_RequestNavigate" > pravidiel GDPR </Hyperlink>
+                    <Hyperlink NavigateUri="https://eugdpr.org" RequestNavigate="Hyperlink_RequestNavigate" > pravidiel GDPR </Hyperlink>
                 </TextBlock>
             </WrapPanel>
 

@@ -84,7 +84,7 @@ namespace WpfApp1
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", "https://www.henkel.sk/spolocnost/riadenie-a-sulad-s-legislativou/spracuvanie-osobnych-udajov?fbclid=IwAR1alwPhX5n7AyrSo39nhJ87hhJNICfbTgJOgKmGAcMsP-91Q4Y2Cx2eHlg");
+            System.Diagnostics.Process.Start("explorer.exe", "https://eugdpr.org");
             e.Handled = true;
         }
 
