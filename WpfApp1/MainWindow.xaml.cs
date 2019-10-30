@@ -117,6 +117,7 @@ namespace WpfApp1
             public string patch { get; set; }
             public string role { get; set; }
             public string info { get; set; }
+            public int score { get; set; }
         }
     }
 

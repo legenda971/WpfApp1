@@ -69,6 +69,7 @@ namespace WpfApp1
                 item.patch = path;
                 item.role = position[i].Title;
                 item.info = position[i].Role;
+                item.score = position[i].Score;
                 list.Add(item);
             }
 
