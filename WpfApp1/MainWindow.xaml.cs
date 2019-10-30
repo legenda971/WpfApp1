@@ -39,11 +39,6 @@ namespace WpfApp1
 
 
             InitializeComponent();
-            /*List<TodoItem> items = new List<TodoItem>();
-            for (int i = 0; i <= 5; i++)
-                items.Add(new TodoItem() { nameFile = "Robo " + i, patch = "kappa", role = "Upratovacka" });
-
-            pdfList.ItemsSource = items;*/
         }
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
@@ -68,11 +63,16 @@ namespace WpfApp1
 
         private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
             TodoItem item = pdfList.SelectedItem as TodoItem;
-            System.Console.WriteLine(item.patch);
+            if (item == null)
+                return;
+
+            System.Diagnostics.Process.Start("explorer.exe", item.patch);
         }
 
         private void pdfList_Change(object sender, RoutedEventArgs e){
-
+            TodoItem item = pdfList.SelectedItem as TodoItem;
+            textBlockNameRole.Text = item.role;
+            textBlockRoleKappa.Text = item.info;
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
