@@ -68,7 +68,11 @@ namespace WpfApp1
 
         private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
             TodoItem item = pdfList.SelectedItem as TodoItem;
-            System.Console.WriteLine(item.nameFile);
+            System.Console.WriteLine(item.patch);
+        }
+
+        private void pdfList_Change(object sender, RoutedEventArgs e){
+
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)

@@ -38,7 +38,7 @@
             </WrapPanel>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20">
-            <ListBox Name="pdfList" Height="auto" Width="auto">
+            <ListBox Name="pdfList" Height="auto" Width="auto" SelectionChanged="pdfList_Change">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <WrapPanel Margin="1" Orientation="Horizontal">
