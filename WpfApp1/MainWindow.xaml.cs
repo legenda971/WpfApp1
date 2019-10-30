@@ -107,8 +107,23 @@ namespace WpfApp1
      
         }
 
-        private void export_Click(object sender, RequestNavigateEventArgs e) { 
-        
+        private void export_Click(object sender, RoutedEventArgs e) {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Export to CSV|*.csv";
+            saveFileDialog1.Title = "Export to CSV";
+            saveFileDialog1.ShowDialog();
+
+            System.Console.WriteLine(saveFileDialog1.FileName);
+
+            //if (saveFileDialog1.FileName != "")
+            //{
+            //
+            //    System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+            //
+            //   
+            //
+            //    fs.Close();
+            //}
         }
 
         public class TodoItem
