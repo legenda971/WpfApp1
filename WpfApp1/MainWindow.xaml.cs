@@ -65,9 +65,11 @@ namespace WpfApp1
                 MessageBox.Show("GDPR ?");
             }
         }
-        //private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
-        //   System.Console.WriteLine("Zakliknuta : " + pdfList.SelectedItem.)
-        //}
+
+        private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
+            TodoItem item = pdfList.SelectedItem as TodoItem;
+            System.Console.WriteLine(item.nameFile);
+        }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
