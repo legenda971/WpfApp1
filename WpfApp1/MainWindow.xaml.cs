@@ -23,21 +23,14 @@ namespace WpfApp1
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     ///
-    public partial class MainWindow : Window {
-        HenkelJobPosition records;
-        DataProcessing data;
+    public partial class MainWindow : Window
+    {
+
         public MainWindow()
         {
-
-            data = new DataProcessing();
-
-            records = data.recordsProcessing("..\\..\\..\\henkel.xml");
-            data.stringsProcessing(records);
-
-           
             InitializeComponent();
             List<TodoItem> items = new List<TodoItem>();
-            for(int i = 0; i <= 5; i++)
+            for (int i = 0; i <= 5; i++)
                 items.Add(new TodoItem() { nameFile = "Robo " + i, patch = "kappa", role = "Upratovacka" });
 
             pdfList.ItemsSource = items;
@@ -53,13 +46,10 @@ namespace WpfApp1
                 openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
                 openFileDialog.ShowDialog();
                 TextBlock.Text = (string)(openFileDialog.FileName);
-                //System.Console.WriteLine("Path : " + openFileDialog.FileName);
-                string pdfText = Samo.readPDF(openFileDialog.FileName);
-                processingPDF(records.Position ,pdfText);
-
-
+                System.Console.WriteLine("Patch : " + openFileDialog.FileName);
             }
-            else {
+            else
+            {
                 MessageBox.Show("GDPR ?");
             }
         }
@@ -71,6 +61,13 @@ namespace WpfApp1
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://eugdpr.org");
             e.Handled = true;
+        }
+
+        public class TodoItem
+        {
+            public string nameFile { get; set; }
+            public string patch { get; set; }
+            public string role { get; set; }
         }
     }
 

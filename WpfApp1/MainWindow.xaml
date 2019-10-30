@@ -51,7 +51,7 @@
             </ListBox>
         </WrapPanel>
         <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="auto">
-            <Button Name="otvoritPDF" Click="otvoritPDF_Click">Otvorit PDF</Button>
+            <Button Name="otvoritPDF">Otvorit PDF</Button>
         </WrapPanel>
     </Grid>
 </Window>
