@@ -22,12 +22,20 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <DockPanel Margin="10">
-            <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+    <Grid Margin="20">
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
+                <Grid Margin="10" />
+                <TextBlock Margin="15" Grid.Row="0" Grid.Column="0" Name="TextBlock" TextAlignment="Center" >Patch</TextBlock>
             </WrapPanel>
-            <TextBox Name="txtEditor" />
-        </DockPanel>
+            <WrapPanel >
+                <CheckBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="CheckBoxGDPR"/>
+                <Label>More about GDPR visit on this website</Label>
+                <TextBlock VerticalAlignment="Center">           
+                    <Hyperlink NavigateUri="https://eugdpr.org" RequestNavigate="Hyperlink_RequestNavigate" > HERE </Hyperlink>
+                </TextBlock>
+            </WrapPanel>
+        </WrapPanel>
     </Grid>
 </Window>

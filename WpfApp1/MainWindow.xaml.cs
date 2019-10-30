@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using System.Diagnostics;
+using System.Windows.Navigation;
 
 namespace WpfApp1
 {
@@ -30,11 +32,24 @@ namespace WpfApp1
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
         {
-            System.Console.WriteLine("Otvorene okno");
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
-            if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+            if (CheckBoxGDPR.IsChecked == true)
+            {
+                CheckBoxGDPR.IsEnabled = false;
+                System.Console.WriteLine("Browser patch");
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
+                openFileDialog.ShowDialog();
+                TextBlock.Text = (string)(openFileDialog.FileName);
+                System.Console.WriteLine("Patch : " + openFileDialog.FileName);
+            }
+            else {
+                MessageBox.Show("GDPR ?");
+            }
+        }
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "https://eugdpr.org");
+            e.Handled = true;
         }
     }
 
