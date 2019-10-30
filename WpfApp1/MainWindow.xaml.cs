@@ -83,7 +83,20 @@ namespace WpfApp1
         private void processingPDF(Position[] position, string pdfText, string path)
         {
             Samo.calcScore(position, pdfText);
-            pdfList.ItemsSource = data.bestItem(records.Position, path);
+            List<TodoItem> temp = pdfList.ItemsSource as List<TodoItem>;
+           
+            if (temp == null)
+            {
+                pdfList.ItemsSource = data.bestItem(records.Position, path);
+            }
+            else
+            {
+                List<TodoItem> newList = new List<TodoItem>(temp);
+                newList.Add(data.bestItem(records.Position, path)[0]);
+                pdfList.ItemsSource = newList;
+            }
+
+     
         }
 
         public class TodoItem
