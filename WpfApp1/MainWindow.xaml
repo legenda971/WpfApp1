@@ -27,7 +27,7 @@
             <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
                 <Grid Margin="10" />
-                <TextBlock Margin="15" Grid.Row="0" Grid.Column="0" Name="TextBlock" TextAlignment="Center" >Patch</TextBlock>
+                <TextBlock Margin="15" Grid.Row="0" Grid.Column="0" Name="TextBlock" TextAlignment="Center" />
             </WrapPanel>
             <WrapPanel >
                 <CheckBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="CheckBoxGDPR"/>

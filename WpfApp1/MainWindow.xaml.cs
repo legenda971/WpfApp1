@@ -24,9 +24,17 @@ namespace WpfApp1
     /// </summary>
     ///
     public partial class MainWindow : Window {
-
+        HenkelJobPosition records;
+        DataProcessing data;
         public MainWindow()
         {
+
+            data = new DataProcessing();
+
+            records = data.recordsProcessing("..\\..\\..\\henkel.xml");
+            data.stringsProcessing(records);
+
+           
             InitializeComponent();
         }
 
@@ -40,7 +48,11 @@ namespace WpfApp1
                 openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
                 openFileDialog.ShowDialog();
                 TextBlock.Text = (string)(openFileDialog.FileName);
-                System.Console.WriteLine("Patch : " + openFileDialog.FileName);
+                //System.Console.WriteLine("Path : " + openFileDialog.FileName);
+                string pdfText = Samo.readPDF(openFileDialog.FileName);
+                processingPDF(records.Position ,pdfText);
+
+
             }
             else {
                 MessageBox.Show("GDPR ?");
@@ -50,6 +62,13 @@ namespace WpfApp1
         {
             System.Diagnostics.Process.Start("explorer.exe", "https://eugdpr.org");
             e.Handled = true;
+        }
+
+        private void processingPDF(Position[] position, string pdfText) {
+
+            Samo.calcScore(position, pdfText);
+
+
         }
     }
 

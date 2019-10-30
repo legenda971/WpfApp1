@@ -56,21 +56,25 @@ namespace WpfApp1
             return numOfStrings;
         }
 
-        public static void calcScore(Robo.Postions[] arrayPos, string text) {
+        public static void calcScore(Position[] arrayPos, string text) {
             // das tomu pole positinos (ten obsahuje score a keywordList) a zadaj potom text z CV
-
+        
             /*
              * do scere vlozi pocet vyskytov key words vyskytov v CV
             */
-
+        
             for (int i = 0; i < arrayPos.Length; i++) {
-                for (int j = 0; j < arrayPos[i].keyWords.Length; j++){
 
-                    arrayPos[i].score += findNumStrInStr(text, arrayPos[i].keyWords[j]);
+                arrayPos[i].Score = 0;
+                int lenStringList = arrayPos[i].StringList.Count;
+                for (int j = 0; j < lenStringList; j++) {
+
+                    arrayPos[i].Score += findNumStrInStr(text, arrayPos[i].StringList[j].ToString());
+                    
                 }            
             }
-
-
+        
+        
         }
     }
 }
