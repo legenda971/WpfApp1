@@ -46,12 +46,9 @@ namespace WpfApp1
             if (CheckBoxGDPR.IsChecked == true)
             {
                 CheckBoxGDPR.IsEnabled = false;
-                System.Console.WriteLine("Browser patch");
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
                 openFileDialog.ShowDialog();
-                TextBlock.Text = (string)(openFileDialog.FileName);
-                //System.Console.WriteLine("Patch : " + openFileDialog.FileName);
                 string pdfText = Samo.readPDF(openFileDialog.FileName);
                 processingPDF(records.Position, pdfText, openFileDialog.FileName);
             }

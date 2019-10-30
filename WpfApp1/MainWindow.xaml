@@ -26,8 +26,6 @@
         <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
             <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="btnOpenFile" Click="btnOpenFile_Click">Open file</Button>
-                <Grid Margin="10" />
-                <TextBlock Margin="15" Grid.Row="0" Grid.Column="0" Name="TextBlock" TextAlignment="Center" />
             </WrapPanel>
             <WrapPanel >
                 <CheckBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="CheckBoxGDPR"/>
@@ -43,7 +41,6 @@
                     <DataTemplate>
                         <WrapPanel Margin="1" Orientation="Horizontal">
                             <TextBlock Text="{Binding nameFile}" Margin="0,0,10,0"/>
-                            <TextBlock Text="{Binding patch}" Margin="0,0,10,0"/>
                             <TextBlock Text="{Binding role}" Margin="0,0,10,0"/>
                         </WrapPanel>
                     </DataTemplate>
