@@ -51,19 +51,26 @@ namespace WpfApp1
         {
             List<MainWindow.TodoItem> list = new List<MainWindow.TodoItem>();
             MainWindow.TodoItem item = new MainWindow.TodoItem();
-            Position posBest = bestPosition(position);
-
-            /*Array.Sort(position, delegate (Position pos1, Position pos2)
-            {
-                return pos2.Score.CompareTo(pos1.Score);
-            });*/
+            /*Position posBest = bestPosition(position);
 
             item.nameFile = Path.GetFileName(path);
             item.patch = path;
             item.role = posBest.Title;
-            item.info = posBest.Role;
+            item.info = posBest.Role;*/
 
-            list.Add(item);
+            Array.Sort(position, delegate (Position pos1, Position pos2)
+            {
+                return pos2.Score.CompareTo(pos1.Score);
+            });
+
+            for (int i = 0; i < 1; i++)
+            {
+                item.nameFile = Path.GetFileName(path);
+                item.patch = path;
+                item.role = position[i].Title;
+                item.info = position[i].Role;
+                list.Add(item);
+            }
 
             return list;
         }
