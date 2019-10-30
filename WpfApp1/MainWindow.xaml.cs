@@ -68,6 +68,8 @@ namespace WpfApp1
 
         private void pdfList_Change(object sender, RoutedEventArgs e){
             TodoItem item = pdfList.SelectedItem as TodoItem;
+            if (item == null)
+                return;
             textBlockNameRole.Text = item.role;
             textBlockRoleKappa.Text = item.info;
         }
