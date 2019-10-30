@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -28,6 +29,43 @@ namespace WpfApp1
                 foreach (String word in words)
                     pos.StringList.Add(word);
             }
+        }
+
+        public Position bestPosition(Position[] position)
+        {
+            int ind = 0, maxScore = 0;
+
+            for (int i = 0; i < position.Length; i++)
+            {
+                if (position[i].Score > maxScore)
+                {
+                    maxScore = position[i].Score;
+                    ind = i;
+                }
+            }
+
+            return position[ind];
+        }
+
+        public List<MainWindow.TodoItem> bestItem(Position[] position, string path)
+        {
+            List<MainWindow.TodoItem> list = new List<MainWindow.TodoItem>();
+            MainWindow.TodoItem item = new MainWindow.TodoItem();
+            Position posBest = bestPosition(position);
+
+            /*Array.Sort(position, delegate (Position pos1, Position pos2)
+            {
+                return pos2.Score.CompareTo(pos1.Score);
+            });*/
+
+            item.nameFile = Path.GetFileName(path);
+            item.patch = path;
+            item.role = posBest.Title;
+            item.info = posBest.Role;
+
+            list.Add(item);
+
+            return list;
         }
     }
 }

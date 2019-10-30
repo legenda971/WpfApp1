@@ -39,11 +39,11 @@ namespace WpfApp1
 
 
             InitializeComponent();
-            List<TodoItem> items = new List<TodoItem>();
+            /*List<TodoItem> items = new List<TodoItem>();
             for (int i = 0; i <= 5; i++)
                 items.Add(new TodoItem() { nameFile = "Robo " + i, patch = "kappa", role = "Upratovacka" });
 
-            pdfList.ItemsSource = items;
+            pdfList.ItemsSource = items;*/
         }
 
         private void btnOpenFile_Click(object sender, RoutedEventArgs e)
@@ -58,16 +58,18 @@ namespace WpfApp1
                 TextBlock.Text = (string)(openFileDialog.FileName);
                 //System.Console.WriteLine("Patch : " + openFileDialog.FileName);
                 string pdfText = Samo.readPDF(openFileDialog.FileName);
-                processingPDF(records.Position, pdfText);
+                processingPDF(records.Position, pdfText, openFileDialog.FileName);
             }
             else
             {
                 MessageBox.Show("GDPR ?");
             }
         }
-        //private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
-        //   System.Console.WriteLine("Zakliknuta : " + pdfList.SelectedItem.)
-        //}
+
+        private void otvoritPDF_Click(object sender, RoutedEventArgs e) {
+            TodoItem item = pdfList.SelectedItem as TodoItem;
+            System.Console.WriteLine(item.nameFile);
+        }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
@@ -75,12 +77,10 @@ namespace WpfApp1
             e.Handled = true;
         }
 
-        private void processingPDF(Position[] position, string pdfText)
+        private void processingPDF(Position[] position, string pdfText, string path)
         {
-
             Samo.calcScore(position, pdfText);
-
-
+            pdfList.ItemsSource = data.bestItem(records.Position, path);
         }
 
         public class TodoItem
@@ -88,6 +88,7 @@ namespace WpfApp1
             public string nameFile { get; set; }
             public string patch { get; set; }
             public string role { get; set; }
+            public string info { get; set; }
         }
     }
 
