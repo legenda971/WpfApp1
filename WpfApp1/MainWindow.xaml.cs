@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 
+
 namespace WpfApp1
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace WpfApp1
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
             if (openFileDialog.ShowDialog() == true)
-                txtEditor.Text = File.ReadAllText(openFileDialog.FileName);
+                txtEditor.Text = Samo.readPDF(openFileDialog.FileName);
         }
     }
 
