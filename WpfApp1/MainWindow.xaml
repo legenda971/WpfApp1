@@ -48,8 +48,9 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </WrapPanel>
-        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto">
+        <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Orientation="Vertical">
             <Button Name="otvoritPDF" Click="otvoritPDF_Click" Margin="10" VerticalAlignment="Center">Otvorit PDF</Button>
+            <Button Margin="10" Click="export_Click">Export</Button>
         </WrapPanel>
 
         <WrapPanel HorizontalAlignment="Left" Width="211" Orientation="Vertical">
