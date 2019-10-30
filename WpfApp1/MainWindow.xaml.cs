@@ -47,10 +47,18 @@ namespace WpfApp1
             {
                 CheckBoxGDPR.IsEnabled = false;
                 OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Multiselect = true;
                 openFileDialog.Filter = "PDF files (*.pdf)|*pdf";
-                openFileDialog.ShowDialog();
-                string pdfText = Samo.readPDF(openFileDialog.FileName);
-                processingPDF(records.Position, pdfText, openFileDialog.FileName);
+
+                if (openFileDialog.ShowDialog()==true)
+                {
+
+                    foreach (string pathPDF in openFileDialog.FileNames)
+                    {
+                        string pdfText = Samo.readPDF(pathPDF);
+                        processingPDF(records.Position, pdfText, pathPDF);
+                    }
+                }
             }
             else
             {
